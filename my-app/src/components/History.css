@@ -1,11 +1,12 @@
 .history-container {
-  min-height: calc(100vh - 60px);
-  background: #f5f7fa;
-  padding: 20px;
+  min-height: calc(100vh - 64px);
+  background: var(--bg-secondary);
+  padding: 24px;
+  transition: background-color 0.3s ease;
 }
 
 .history-header {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto 30px;
   display: flex;
   justify-content: space-between;
@@ -14,59 +15,76 @@
 
 .history-header h1 {
   margin: 0;
-  color: #333;
+  color: var(--text-primary);
   font-size: 32px;
+  font-weight: 700;
+  transition: color 0.3s ease;
 }
 
 .refresh-button {
-  padding: 10px 20px;
-  background: #667eea;
+  padding: 12px 24px;
+  background: var(--primary-color);
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
-  transition: background 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .refresh-button:hover {
-  background: #5568d3;
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .history-message {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 50px auto;
   text-align: center;
-  color: #666;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 .history-message h2 {
   margin-bottom: 20px;
+  color: var(--text-primary);
 }
 
 .login-link {
-  color: #667eea;
+  color: var(--primary-color);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 .login-link:hover {
+  color: var(--primary-hover);
   text-decoration: underline;
 }
 
 .history-list {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .history-item {
-  background: white;
+  background: var(--bg-primary);
   border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.history-item:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
 }
 
 .history-item-header {
@@ -80,37 +98,49 @@
 
 .history-item-header h3 {
   margin: 0;
-  color: #333;
-  font-size: 20px;
+  color: var(--text-primary);
+  font-size: 22px;
+  font-weight: 700;
+  transition: color 0.3s ease;
 }
 
 .history-date {
-  color: #666;
+  color: var(--text-secondary);
   font-size: 14px;
+  font-weight: 500;
 }
 
 .history-item-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 15px;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
 .meta-tag {
-  background: #f0f0f0;
-  color: #666;
-  padding: 6px 12px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  padding: 8px 14px;
   border-radius: 6px;
   font-size: 12px;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.dark-mode .meta-tag {
+  background: var(--bg-tertiary);
 }
 
 .history-user-description {
-  margin-bottom: 15px;
-  padding: 12px;
-  background: #f9f9f9;
+  margin-bottom: 16px;
+  padding: 14px;
+  background: var(--bg-secondary);
   border-radius: 8px;
-  color: #666;
+  color: var(--text-secondary);
   font-size: 14px;
+  border-left: 3px solid var(--primary-color);
+  transition: all 0.3s ease;
 }
 
 .history-description {
@@ -119,36 +149,44 @@
 
 .history-description strong {
   display: block;
-  margin-bottom: 10px;
-  color: #333;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 .history-description pre {
-  background: #f9f9f9;
-  padding: 15px;
+  background: var(--bg-secondary);
+  padding: 18px;
   border-radius: 8px;
   white-space: pre-wrap;
   word-wrap: break-word;
-  color: #333;
-  line-height: 1.6;
+  color: var(--text-primary);
+  line-height: 1.8;
   font-family: inherit;
   font-size: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
 }
 
 .copy-button {
-  padding: 8px 16px;
-  background: #667eea;
+  padding: 10px 20px;
+  background: var(--primary-color);
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
-  transition: background 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .copy-button:hover {
-  background: #5568d3;
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .history-item-actions {
@@ -160,21 +198,25 @@
 .edit-button,
 .delete-button,
 .cancel-button {
-  padding: 6px 12px;
+  padding: 8px 16px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 12px;
-  transition: opacity 0.3s;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .edit-button {
-  background: #667eea;
+  background: var(--primary-color);
   color: white;
 }
 
 .edit-button:hover {
-  opacity: 0.9;
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .delete-button {
@@ -183,53 +225,64 @@
 }
 
 .delete-button:hover {
-  opacity: 0.9;
+  background: #c82333;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .cancel-button {
-  background: #6c757d;
+  background: var(--text-secondary);
   color: white;
 }
 
 .cancel-button:hover {
-  opacity: 0.9;
+  background: var(--text-primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .edit-form {
-  margin-top: 15px;
-  padding: 20px;
-  background: #f9f9f9;
+  margin-top: 20px;
+  padding: 24px;
+  background: var(--bg-secondary);
   border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
 }
 
 .edit-form .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .edit-form label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: 500;
+  margin-bottom: 8px;
+  font-weight: 600;
   font-size: 14px;
-  color: #333;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .edit-form input,
 .edit-form textarea,
 .edit-form select {
   width: 100%;
-  padding: 8px;
-  border: 2px solid #e0e0e0;
+  padding: 12px;
+  border: 1.5px solid var(--border-color);
   border-radius: 6px;
   font-size: 14px;
   font-family: inherit;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
 }
 
 .edit-form input:focus,
 .edit-form textarea:focus,
 .edit-form select:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 63, 108, 0.1);
 }
 
 .edit-actions {
@@ -240,60 +293,69 @@
 
 .regenerate-button,
 .save-update-button {
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
-  font-weight: 500;
-  transition: opacity 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .regenerate-button {
-  background: #667eea;
+  background: var(--primary-color);
   color: white;
 }
 
 .regenerate-button:hover:not(:disabled) {
-  opacity: 0.9;
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .regenerate-button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+  transform: none;
 }
 
 .save-update-button {
-  background: #28a745;
+  background: var(--secondary-color);
   color: white;
 }
 
 .save-update-button:hover {
-  opacity: 0.9;
+  background: #1ea89f;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .regenerated-description {
   margin-top: 20px;
-  padding: 15px;
-  background: white;
-  border-radius: 6px;
-  border: 2px solid #667eea;
+  padding: 18px;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  border: 2px solid var(--primary-color);
+  transition: all 0.3s ease;
 }
 
 .regenerated-description strong {
   display: block;
-  margin-bottom: 10px;
-  color: #333;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .regenerated-description pre {
   margin: 0;
   white-space: pre-wrap;
   word-wrap: break-word;
-  color: #333;
-  line-height: 1.6;
+  color: var(--text-primary);
+  line-height: 1.8;
   font-family: inherit;
   font-size: 14px;
+  transition: color 0.3s ease;
 }
 
 .description-actions {
@@ -303,39 +365,47 @@
 }
 
 .translate-button {
-  padding: 8px 16px;
-  background: #17a2b8;
+  padding: 10px 20px;
+  background: var(--secondary-color);
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
-  transition: background 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .translate-button:hover {
-  background: #138496;
+  background: #1ea89f;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .translation-panel {
   margin-top: 20px;
-  padding: 20px;
-  background: #f8f9fa;
+  padding: 24px;
+  background: var(--bg-secondary);
   border-radius: 8px;
-  border: 2px solid #e0e0e0;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
 }
 
 .translation-panel h4 {
-  margin: 0 0 10px 0;
-  color: #333;
+  margin: 0 0 12px 0;
+  color: var(--text-primary);
   font-size: 16px;
+  font-weight: 700;
+  transition: color 0.3s ease;
 }
 
 .translation-hint {
-  margin: 0 0 15px 0;
-  color: #666;
+  margin: 0 0 16px 0;
+  color: var(--text-secondary);
   font-size: 13px;
   font-style: italic;
+  transition: color 0.3s ease;
 }
 
 .language-inputs {
@@ -353,17 +423,20 @@
 
 .language-input {
   flex: 1;
-  padding: 10px;
-  border: 2px solid #e0e0e0;
+  padding: 12px;
+  border: 1.5px solid var(--border-color);
   border-radius: 6px;
   font-size: 14px;
   font-family: inherit;
-  transition: border-color 0.3s;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
 }
 
 .language-input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 63, 108, 0.1);
 }
 
 .remove-language-button {
@@ -404,86 +477,106 @@
 }
 
 .generate-translation-button {
-  padding: 10px 20px;
-  background: #17a2b8;
+  padding: 12px 24px;
+  background: var(--secondary-color);
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
-  font-weight: 500;
-  transition: background 0.3s;
-  margin-bottom: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
 }
 
 .generate-translation-button:hover:not(:disabled) {
-  background: #138496;
+  background: #1ea89f;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .generate-translation-button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+  transform: none;
 }
 
 .translations-display {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-top: 15px;
+  gap: 16px;
+  margin-top: 16px;
 }
 
 .translation-item {
-  background: white;
-  padding: 15px;
+  background: var(--bg-primary);
+  padding: 18px;
   border-radius: 8px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.translation-item:hover {
+  box-shadow: var(--shadow-sm);
 }
 
 .translation-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .translation-header strong {
-  color: #667eea;
+  color: var(--primary-color);
   font-size: 14px;
+  font-weight: 700;
 }
 
 .translation-item pre {
   margin: 0;
   white-space: pre-wrap;
   word-wrap: break-word;
-  color: #333;
-  line-height: 1.6;
+  color: var(--text-primary);
+  line-height: 1.8;
   font-family: inherit;
   font-size: 14px;
+  transition: color 0.3s ease;
 }
 
 .copy-button-small {
-  padding: 6px 12px;
-  background: #667eea;
+  padding: 8px 16px;
+  background: var(--primary-color);
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 12px;
-  transition: background 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .copy-button-small:hover {
-  background: #5568d3;
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .error-message {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 20px auto;
   background: #fee;
   color: #c33;
-  padding: 12px;
+  padding: 14px;
   border-radius: 8px;
   font-size: 14px;
   border: 1px solid #fcc;
 }
 
+.dark-mode .error-message {
+  background: #3d1f1f;
+  color: #ff6b6b;
+  border-color: #5a2a2a;
+}

@@ -38,7 +38,6 @@ export const Generation = () => {
   const [saved, setSaved] = useState(false);
   const [images, setImages] = useState<File[]>([]);
   const [imagePreviews, setImagePreviews] = useState<string[]>([]);
-  const [pendingDescription, setPendingDescription] = useState(''); // For logged-in users
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
@@ -111,7 +110,6 @@ export const Generation = () => {
 
       // Show description immediately for both guests and logged-in users
       setDescription(response.description);
-      setPendingDescription(response.description); // Store for saving
       setSaved(false);
       
       // Clear image buffers after successful generation to free memory
@@ -169,13 +167,40 @@ export const Generation = () => {
     <>
       <Navbar />
       <div className="generation-container">
-        <div className="generation-header">
-          <h1>Product Description Generator</h1>
-          {!isAuthenticated && (
-            <p className="guest-notice">
-              <Link to="/login">Login</Link> or <Link to="/register">Register</Link> to save your generation history
+        <div className="hero-section">
+          <div className="hero-content">
+            <h1 className="hero-title">
+              Create Stunning Product Descriptions
+              <span className="hero-accent"> Instantly</span>
+            </h1>
+            <p className="hero-subtitle">
+              Transform your product ideas into compelling, SEO-friendly descriptions with AI-powered precision. 
+              Perfect for e-commerce, marketplaces, and online stores.
             </p>
-          )}
+            <div className="hero-features">
+              <div className="feature-item">
+                <span className="feature-icon">🚀</span>
+                <span>AI-Powered</span>
+              </div>
+              <div className="feature-item">
+                <span className="feature-icon">⚡</span>
+                <span>Lightning Fast</span>
+              </div>
+              <div className="feature-item">
+                <span className="feature-icon">🌍</span>
+                <span>Multi-Language</span>
+              </div>
+              <div className="feature-item">
+                <span className="feature-icon">💼</span>
+                <span>Professional</span>
+              </div>
+            </div>
+            {!isAuthenticated && (
+              <p className="guest-notice">
+                <Link to="/login">Login</Link> or <Link to="/register">Register</Link> to save your generation history
+              </p>
+            )}
+          </div>
         </div>
 
       <div className="generation-content">
@@ -305,26 +330,28 @@ export const Generation = () => {
           </form>
         </div>
 
-        {description && (
-          <div className="result-container">
-            <div className="result-header">
-              <h2>Generated Description</h2>
-              {saved && isAuthenticated && (
-                <span className="saved-badge">✓ Saved to history</span>
-              )}
-              {!saved && isAuthenticated && (
-                <span className="pending-badge">⚠ Not saved yet</span>
-              )}
-              <button onClick={handleCopy} className="copy-button">
-                Copy
-              </button>
-            </div>
-            <div className="result-content">
-              <pre>{description}</pre>
-            </div>
-          </div>
-        )}
       </div>
+      
+      {/* Render result below the form */}
+      {description && (
+        <div className="result-container result-below-form">
+          <div className="result-header">
+            <h2>Generated Description</h2>
+            {saved && isAuthenticated && (
+              <span className="saved-badge">✓ Saved to history</span>
+            )}
+            {!saved && isAuthenticated && (
+              <span className="pending-badge">⚠ Not saved yet</span>
+            )}
+            <button onClick={handleCopy} className="copy-button">
+              Copy
+            </button>
+          </div>
+          <div className="result-content">
+            <pre>{description}</pre>
+          </div>
+        </div>
+      )}
       </div>
     </>
   );

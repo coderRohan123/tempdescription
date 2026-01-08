@@ -1,1 +1,320 @@
-/* App styles */
+/* Comprehensive Dark Mode Text Visibility Fixes */
+
+/* Base text color for dark mode */
+html.dark-mode {
+  color: var(--text-primary);
+}
+
+/* Specific overrides for different element types */
+html.dark-mode p,
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3,
+html.dark-mode h4,
+html.dark-mode h5,
+html.dark-mode h6,
+html.dark-mode span:not(.hero-accent):not(.feature-icon),
+html.dark-mode div:not(.hero-section),
+html.dark-mode label,
+html.dark-mode li,
+html.dark-mode td,
+html.dark-mode th,
+html.dark-mode pre,
+html.dark-mode code {
+  color: var(--text-primary) !important;
+}
+
+/* Override any hardcoded text colors */
+html.dark-mode [style*="color: #333"],
+html.dark-mode [style*="color: #666"],
+html.dark-mode [style*="color: rgb(51, 51, 51)"],
+html.dark-mode [style*="color: rgb(102, 102, 102)"] {
+  color: var(--text-primary) !important;
+}
+
+/* Hero section dark mode */
+html.dark-mode .hero-section {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%) !important;
+  color: var(--text-primary) !important;
+}
+
+html.dark-mode .hero-title {
+  color: var(--text-primary) !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+html.dark-mode .hero-subtitle {
+  color: var(--text-secondary) !important;
+  opacity: 1 !important;
+}
+
+html.dark-mode .hero-accent {
+  color: #ffd700 !important;
+}
+
+html.dark-mode .hero-content,
+html.dark-mode .hero-content * {
+  color: var(--text-primary) !important;
+}
+
+html.dark-mode .feature-item {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-primary) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html.dark-mode .feature-item span {
+  color: var(--text-primary) !important;
+}
+
+html.dark-mode .guest-notice {
+  color: var(--text-secondary) !important;
+}
+
+html.dark-mode .guest-notice a {
+  color: #ffd700 !important;
+}
+
+/* Form elements */
+html.dark-mode .generation-container {
+  background: var(--bg-secondary) !important;
+}
+
+html.dark-mode .generation-form-container::before {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)) !important;
+}
+
+html.dark-mode .generation-form-container {
+  background: var(--bg-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+html.dark-mode .generation-header h1 {
+  color: var(--text-primary) !important;
+}
+
+html.dark-mode .generation-form-container {
+  background: var(--bg-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+html.dark-mode .form-group label {
+  color: var(--text-primary) !important;
+}
+
+html.dark-mode .form-group input,
+html.dark-mode .form-group textarea,
+html.dark-mode .form-group select {
+  color: var(--text-primary) !important;
+  background-color: var(--bg-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+
+
+
+
+html.dark-mode .form-group input::placeholder,
+html.dark-mode .form-group textarea::placeholder {
+  color: var(--text-secondary) !important;
+  opacity: 0.7 !important;
+}
+
+html.dark-mode .image-hint {
+  color: var(--text-secondary) !important;
+}
+
+/* Result container */
+html.dark-mode .result-container {
+  background: var(--bg-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+html.dark-mode .result-container.result-below-form {
+  background: var(--bg-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+html.dark-mode .result-header h2 {
+  color: var(--text-primary) !important;
+}
+
+html.dark-mode .result-content pre {
+  color: var(--text-primary) !important;
+}
+
+/* Badges and messages */
+html.dark-mode .pending-badge {
+  background: #664d03 !important;
+  color: #ffc107 !important;
+}
+
+html.dark-mode .error-message {
+  background: #3d1f1f !important;
+  color: #ff6b6b !important;
+  border-color: #5a2a2a !important;
+}
+
+html.dark-mode .saved-badge {
+  background: #1e4623 !important;
+  color: #4ade80 !important;
+}
+
+html.dark-mode .meta-tag {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-secondary) !important;
+}
+
+/* History page */
+html.dark-mode .history-container {
+  background: var(--bg-secondary) !important;
+}
+
+html.dark-mode .history-header h1 {
+  color: var(--text-primary) !important;
+}
+
+html.dark-mode .history-item {
+  background: var(--bg-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+html.dark-mode .history-item-header h3 {
+  color: var(--text-primary) !important;
+}
+
+html.dark-mode .history-date {
+  color: var(--text-secondary) !important;
+}
+
+html.dark-mode .history-user-description {
+  background: var(--bg-secondary) !important;
+  color: var(--text-secondary) !important;
+}
+
+html.dark-mode .history-description strong {
+  color: var(--text-primary) !important;
+}
+
+html.dark-mode .history-description pre {
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+html.dark-mode .translation-panel {
+  background: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+
+html.dark-mode .translation-panel h4 {
+  color: var(--text-primary) !important;
+}
+
+html.dark-mode .translation-hint {
+  color: var(--text-secondary) !important;
+}
+
+html.dark-mode .translation-item {
+  background: var(--bg-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+html.dark-mode .translation-item pre {
+  color: var(--text-primary) !important;
+}
+
+html.dark-mode .translation-header strong {
+  color: var(--primary-color) !important;
+}
+
+/* Auth pages */
+html.dark-mode .auth-container {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%) !important;
+}
+
+html.dark-mode .auth-card {
+  background: var(--bg-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+html.dark-mode .auth-card h2 {
+  color: var(--text-primary) !important;
+}
+
+html.dark-mode .auth-subtitle {
+  color: var(--text-secondary) !important;
+}
+
+html.dark-mode .auth-footer {
+  color: var(--text-secondary) !important;
+}
+
+html.dark-mode .auth-footer a {
+  color: var(--primary-color) !important;
+}
+
+/* Links */
+html.dark-mode a:not(.guest-notice a):not(.auth-footer a):not(.navbar-button) {
+  color: var(--primary-color) !important;
+}
+
+html.dark-mode .auth-footer a {
+  color: var(--primary-color) !important;
+}
+
+/* Buttons - keep white text on colored buttons */
+html.dark-mode button:not(.theme-toggle),
+html.dark-mode .generate-button,
+html.dark-mode .save-button,
+html.dark-mode .copy-button {
+  color: white !important;
+}
+
+/* Navbar */
+html.dark-mode .navbar {
+  background: var(--bg-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+html.dark-mode .navbar-link {
+  color: var(--text-primary) !important;
+}
+
+html.dark-mode .navbar-button {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+html.dark-mode .navbar-user {
+  color: var(--text-secondary) !important;
+}
+
+/* CATCH-ALL: Force all text elements to be visible in dark mode */
+html.dark-mode .generation-container *:not(button):not(.generate-button):not(.save-button):not(.copy-button):not(.navbar-button):not(.remove-image-button):not(.remove-language-button):not(.add-language-button):not(.generate-translation-button):not(.translate-button):not(.edit-button):not(.delete-button):not(.cancel-button):not(.regenerate-button):not(.save-update-button):not(.copy-button-small) {
+  color: var(--text-primary) !important;
+}
+
+html.dark-mode .generation-container input,
+html.dark-mode .generation-container textarea,
+html.dark-mode .generation-container select,
+html.dark-mode .generation-container label {
+  color: var(--text-primary) !important;
+}
+
+html.dark-mode .generation-container input::placeholder,
+html.dark-mode .generation-container textarea::placeholder {
+  color: var(--text-secondary) !important;
+  opacity: 0.7 !important;
+}
+
+/* Ensure result text is visible */
+html.dark-mode .result-container *:not(button):not(.generate-button):not(.save-button):not(.copy-button) {
+  color: var(--text-primary) !important;
+}
+
+html.dark-mode .result-content,
+html.dark-mode .result-content * {
+  color: var(--text-primary) !important;
+}
